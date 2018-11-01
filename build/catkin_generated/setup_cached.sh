@@ -7,7 +7,6 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/devel:$CMAKE_PREFIX_PATH"
+export CPATH="/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/lab4/devel/include:/scratch/shared/baxter_ws/devel/include:/opt/ros/indigo/include"
 export PWD="/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/build"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
-export ROS_PACKAGE_PATH="/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/src:$ROS_PACKAGE_PATH"
+export PYTHONPATH="/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/lab4/devel/lib/python2.7/dist-packages:/scratch/shared/baxter_ws/devel/lib/python2.7/dist-packages:/opt/ros/indigo/lib/python2.7/dist-packages"

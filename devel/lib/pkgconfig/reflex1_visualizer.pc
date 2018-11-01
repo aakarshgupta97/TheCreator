@@ -1,0 +1,8 @@
+prefix=/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/devel
+
+Name: reflex1_visualizer
+Description: Description of reflex1_visualizer
+Version: 1.3.0
+Cflags: 
+Libs: -L/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/devel/lib 
+Requires: 

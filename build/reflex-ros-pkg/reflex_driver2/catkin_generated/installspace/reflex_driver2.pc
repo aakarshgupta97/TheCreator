@@ -1,0 +1,8 @@
+prefix=/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/install
+
+Name: reflex_driver2
+Description: Description of reflex_driver2
+Version: 2.0.0
+Cflags: 
+Libs: -L/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/install/lib 
+Requires: roscpp reflex_msgs2

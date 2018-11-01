@@ -1,2 +1,2 @@
-grasping
+grasping:reflex-ros-pkg/reflex:reflex-ros-pkg/reflex1_visualizer:reflex-ros-pkg/reflex_driver:reflex-ros-pkg/reflex_driver2:reflex-ros-pkg/reflex_msgs:reflex-ros-pkg/reflex_msgs2:reflex-ros-pkg/reflex_one_msgs:reflex-ros-pkg/reflex_visualizer:reflex-ros-pkg/reflex_visualizer2
 -DCATKIN_DEVEL_PREFIX=/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/devel -DCMAKE_INSTALL_PREFIX=/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/install -G Unix Makefiles
