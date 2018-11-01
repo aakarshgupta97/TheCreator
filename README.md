@@ -1,7 +1,7 @@
 # TheCreator
 The Creator is a general-purpose LEGO 
 
-##Dependencies
+## Dependencies
 TheCreator is designed for our current versions of ROS, Python, and other dependencies, and thus might not work out-of-the-box on your local machine. We also probably won't be updating this repository to accomodate versions other than our own, so good luck!
 
 We're using the following configuration:
