@@ -5,13 +5,5 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 SUBDIRS(gtest)
-SUBDIRS(reflex-ros-pkg/reflex_msgs)
-SUBDIRS(reflex-ros-pkg/reflex_msgs2)
-SUBDIRS(reflex-ros-pkg/reflex_one_msgs)
-SUBDIRS(reflex-ros-pkg/reflex_driver)
-SUBDIRS(reflex-ros-pkg/reflex_driver2)
-SUBDIRS(reflex-ros-pkg/reflex)
-SUBDIRS(reflex-ros-pkg/reflex1_visualizer)
-SUBDIRS(reflex-ros-pkg/reflex_visualizer)
-SUBDIRS(reflex-ros-pkg/reflex_visualizer2)
 SUBDIRS(grasping)
+SUBDIRS(planning)

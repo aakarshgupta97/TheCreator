@@ -364,6 +364,12 @@ object_recognition_msgs_DIR:PATH=/opt/ros/indigo/share/object_recognition_msgs/c
 octomap_msgs_DIR:PATH=/opt/ros/indigo/share/octomap_msgs/cmake
 
 //Value Computed by CMake
+planning_BINARY_DIR:STATIC=/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/build/planning
+
+//Value Computed by CMake
+planning_SOURCE_DIR:STATIC=/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/src/planning
+
+//Value Computed by CMake
 reflex1_visualizer_BINARY_DIR:STATIC=/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/build/reflex-ros-pkg/reflex1_visualizer
 
 //Value Computed by CMake
@@ -603,7 +609,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=12
+CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=4
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

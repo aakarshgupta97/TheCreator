@@ -117,16 +117,8 @@ ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unsp
 IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   INCLUDE("/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/build/gtest/cmake_install.cmake")
-  INCLUDE("/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/build/reflex-ros-pkg/reflex_msgs/cmake_install.cmake")
-  INCLUDE("/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/build/reflex-ros-pkg/reflex_msgs2/cmake_install.cmake")
-  INCLUDE("/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/build/reflex-ros-pkg/reflex_one_msgs/cmake_install.cmake")
-  INCLUDE("/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/build/reflex-ros-pkg/reflex_driver/cmake_install.cmake")
-  INCLUDE("/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/build/reflex-ros-pkg/reflex_driver2/cmake_install.cmake")
-  INCLUDE("/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/build/reflex-ros-pkg/reflex/cmake_install.cmake")
-  INCLUDE("/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/build/reflex-ros-pkg/reflex1_visualizer/cmake_install.cmake")
-  INCLUDE("/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/build/reflex-ros-pkg/reflex_visualizer/cmake_install.cmake")
-  INCLUDE("/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/build/reflex-ros-pkg/reflex_visualizer2/cmake_install.cmake")
   INCLUDE("/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/build/grasping/cmake_install.cmake")
+  INCLUDE("/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/build/planning/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 
