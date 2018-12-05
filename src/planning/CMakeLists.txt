@@ -16,6 +16,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   tf2_ros
+  message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -59,11 +60,11 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   Service1.srv
-#   Service2.srv
-# )
+add_service_files(
+  FILES
+  BuildStructure.srv
+  ModelGenerator.srv
+)
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -77,6 +78,7 @@ find_package(catkin REQUIRED COMPONENTS
 #   DEPENDENCIES
 #   geometry_msgs#   moveit_msgs#   std_msgs
 # )
+generate_messages()
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -112,6 +114,7 @@ catkin_package(
 #  LIBRARIES planning
 #  CATKIN_DEPENDS baxter_tools geometry_msgs intera_interface moveit_msgs roscpp rospy std_msgs tf2_ros
 #  DEPENDS system_lib
+   CATKIN_DEPENDS message_runtime
 )
 
 ###########

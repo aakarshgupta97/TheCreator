@@ -7,6 +7,11 @@ Authors: Ahad Rauf, Aakarsh Gupta, Amay Saxena, Sairanjith Thalanki
 import numpy as np
 import matplotlib.pyplot as plt
 
+import os, sys
+planningPath = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.append(planningPath)
+srvPath = os.path.join(planningPath, 'srv')
+sys.path.append(srvPath)
 from planning.srv import ModelGenerator, ModelGeneratorResponse
 
 def generate_model(depth_map):
@@ -55,12 +60,12 @@ def modelGeneratorMain():
 
    errorCode = 0
    blocks = generate_model(test)
-   return ModelGeneratorResponse(errorCode, blocks)
+   return ModelGeneratorResponse(errorCode, blocks, 10, 12)
    
 def initialize_service():
-	rospy.init_node('build_structure_node')
-	service = rospy.Service('build_structure', BuildStructure, modelGeneratorMain)
-	print('Ready to build structures')
+	rospy.init_node('model_generator_node')
+	service = rospy.Service('model_generator', ModelGenerator, modelGeneratorMain)
+	print('Ready to create model')
 	rospy.spin()
 
 if __name__ == '__main__':

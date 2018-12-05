@@ -1,4 +1,6 @@
 # No input (at least right now)
 ---
 int8 errorCode  # Zero for successful run, nonzero for error
-int8[][] blocks  # 2D grid of block positions (index-0). Needs to be transformed to real-world coordinates.
+int8[] blocks  # 2D grid of block positions (index-0). Needs to be transformed to real-world coordinates.
+int8 width
+int8 height

@@ -1,8 +1,0 @@
-prefix=/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/devel
-
-Name: reflex_driver
-Description: Description of reflex_driver
-Version: 2.0.0
-Cflags: 
-Libs: -L/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/devel/lib 
-Requires: roscpp reflex_msgs

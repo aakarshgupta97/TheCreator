@@ -1,8 +1,8 @@
-prefix=/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/devel
+prefix=/home/cc/ee106a/fa18/class/ee106a-aby/ros_workspaces/TheCreator/devel
 
 Name: planning
 Description: Description of planning
 Version: 0.0.0
-Cflags: 
-Libs: -L/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/devel/lib 
-Requires: 
+Cflags: -I/home/cc/ee106a/fa18/class/ee106a-aby/ros_workspaces/TheCreator/devel/include
+Libs: -L/home/cc/ee106a/fa18/class/ee106a-aby/ros_workspaces/TheCreator/devel/lib 
+Requires: message_runtime

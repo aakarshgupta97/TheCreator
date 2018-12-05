@@ -1,3 +1,5 @@
-int8[][] blocks
+int8[] blocks
+int8 width
+int8 height
 ---
 int8 errorCode  # Zero for successful run, nonzero for error

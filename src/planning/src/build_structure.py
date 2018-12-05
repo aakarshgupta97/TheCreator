@@ -28,6 +28,12 @@ else:
 
 import threading
 
+import os, sys
+planningPath = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.append(planningPath)
+srvPath = os.path.join(planningPath, 'srv')
+sys.path.append(srvPath)
+
 from planning.srv import BuildStructure, BuildStructureResponse
 
 # All in meters (m)
@@ -120,7 +126,7 @@ def move_arm_to(planner, x, y, z, ox, oy, oz, ow, orientation_constraint=None):
         else:
             break
 
- def buildStructureMain(blockPositions):
+ def buildStructureMain(blocks_flattened, width, height):
  	"""
 	Inputs:
 	blockPositions : int8[][] (the input given by planning/srv/BuildStructure.srv)
@@ -128,6 +134,9 @@ def move_arm_to(planner, x, y, z, ox, oy, oz, ow, orientation_constraint=None):
 	Outputs:
 	errorCode : int8 (the output required by planning/srv/BuildStructure.srv, 0 = successful run)
  	"""
+
+    blocks = np.reshape(blocks_flattened, (width, height))
+
     # planner = PathPlanner("right_arm")
 
     # # Set up the right gripper
