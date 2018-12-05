@@ -7,6 +7,8 @@ Authors: Ahad Rauf, Aakarsh Gupta, Amay Saxena, Sairanjith Thalanki
 import numpy as np
 import matplotlib.pyplot as plt
 
+import rospy
+
 import os, sys
 planningPath = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.append(planningPath)

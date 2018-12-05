@@ -8,8 +8,14 @@
   -->
 
   <!-- Uncomment below to run the camera service and image processing -->
+  <!--
   <node name="inflate_gripper" pkg="planning" type="inflate_gripper.py"  respawn="false" output="screen" />
   <node name="deflate_gripper" pkg="planning" type="deflate_gripper.py"  respawn="false" output="screen" />
   <node name="path_test" pkg="planning" type="path_test.py"  respawn="false" output="screen" />
+  -->
+
+  <!-- Uncomment below to run the camera service and image processing -->
+  <node name="model_generator" pkg="planning" type="model_generator.py"  respawn="false" output="screen" />
+  <node name="build_structure" pkg="planning" type="build_structure.py"  respawn="false" output="screen" />
 
 </launch>
