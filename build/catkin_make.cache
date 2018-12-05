@@ -1,2 +1,0 @@
-grasping
--DCATKIN_DEVEL_PREFIX=/home/cc/ee106a/fa18/class/ee106a-aby/ros_workspaces/TheCreator/devel -DCMAKE_INSTALL_PREFIX=/home/cc/ee106a/fa18/class/ee106a-aby/ros_workspaces/TheCreator/install -G Unix Makefiles

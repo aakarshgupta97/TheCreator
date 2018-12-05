@@ -1,0 +1,15 @@
+<launch>
+  <!-- Uncomment below to run the image viewer -->
+  <!--
+  <node name="image_view" pkg="image_view" type="image_view" respawn="false" output="screen">
+    <remap from="image" to="/usb_cam/image_raw" />
+    <param name="autosize" value="true" />
+  </node>
+  -->
+
+  <!-- Uncomment below to run the camera service and image processing -->
+  <node name="inflate_gripper" pkg="planning" type="inflate_gripper.py"  respawn="false" output="screen" />
+  <node name="deflate_gripper" pkg="planning" type="deflate_gripper.py"  respawn="false" output="screen" />
+  <node name="path_test" pkg="planning" type="path_test.py"  respawn="false" output="screen" />
+
+</launch>
