@@ -24,7 +24,9 @@ elif any([robot_name in os.environ['ROS_MASTER_URI'] for robot_name in BAXTER_RO
 	import baxter_interface
 	from baxter_interface import Gripper
 else:
-	raise EnvironmentError("You're not on either a Baxter or a Sawyer")
+    import intera_interface
+    from intera_interface import Gripper
+	# raise EnvironmentError("You're not on either a Baxter or a Sawyer")
 
 import threading
 
@@ -126,8 +128,9 @@ def move_arm_to(planner, x, y, z, ox, oy, oz, ow, orientation_constraint=None):
         else:
             break
 
-def buildStructureMain(blocks_flattened, width, height):
-    blocks = np.reshape(blocks_flattened, (width, height))
+def buildStructureMain(inputs):
+    blocks, width, height = inputs.blocks, inputs.width, inputs.height
+    blocks = np.reshape(blocks, (width, height))
 
     # Return output of service
     errorCode = 0

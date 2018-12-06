@@ -64,6 +64,7 @@ add_service_files(
   FILES
   BuildStructure.srv
   ModelGenerator.srv
+  SwitchMaster.srv
 )
 
 ## Generate actions in the 'action' folder
@@ -78,7 +79,10 @@ add_service_files(
 #   DEPENDENCIES
 #   geometry_msgs#   moveit_msgs#   std_msgs
 # )
-generate_messages()
+generate_messages(
+   DEPENDENCIES
+   std_msgs
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
