@@ -132,13 +132,13 @@ def buildStructureMain(blocks_flattened, width, height):
     # Return output of service
     errorCode = 0
     return BuildStructureResponse(errorCode)
-# """
-# Inputs:
-# blockPositions : int8[][] (the input given by planning/srv/BuildStructure.srv)
+"""
+Inputs:
+blockPositions : int8[][] (the input given by planning/srv/BuildStructure.srv)
 
-# Outputs:
-# errorCode : int8 (the output required by planning/srv/BuildStructure.srv, 0 = successful run)
-# """
+Outputs:
+errorCode : int8 (the output required by planning/srv/BuildStructure.srv, 0 = successful run)
+"""
 
 # planner = PathPlanner("right_arm")
 
