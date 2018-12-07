@@ -67,14 +67,14 @@ set(planning_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(planning_SOURCE_PREFIX /home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/src/planning)
-  set(planning_DEVEL_PREFIX /home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/devel)
+  set(planning_SOURCE_PREFIX /home/cc/ee106a/fa18/class/ee106a-aby/ros_workspaces/TheCreator/src/planning)
+  set(planning_DEVEL_PREFIX /home/cc/ee106a/fa18/class/ee106a-aby/ros_workspaces/TheCreator/devel)
   set(planning_INSTALL_PREFIX "")
   set(planning_PREFIX ${planning_DEVEL_PREFIX})
 else()
   set(planning_SOURCE_PREFIX "")
   set(planning_DEVEL_PREFIX "")
-  set(planning_INSTALL_PREFIX /home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/install)
+  set(planning_INSTALL_PREFIX /home/cc/ee106a/fa18/class/ee106a-aby/ros_workspaces/TheCreator/install)
   set(planning_PREFIX ${planning_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(planning_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/devel/include " STREQUAL " ")
+if(NOT "/home/cc/ee106a/fa18/class/ee106a-aby/ros_workspaces/TheCreator/devel/include " STREQUAL " ")
   set(planning_INCLUDE_DIRS "")
-  set(_include_dirs "/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/devel/include")
+  set(_include_dirs "/home/cc/ee106a/fa18/class/ee106a-aby/ros_workspaces/TheCreator/devel/include")
   foreach(idir ${_include_dirs})
     if(IS_ABSOLUTE ${idir} AND IS_DIRECTORY ${idir})
       set(include ${idir})
@@ -103,7 +103,7 @@ if(NOT "/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/devel/in
         message(FATAL_ERROR "Project 'planning' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  Ask the maintainer 'Ahad Rauf <ahadrauf@berkeley.edu>' to fix it.")
       endif()
     else()
-      message(FATAL_ERROR "Project 'planning' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/src/planning/${idir}'.  Ask the maintainer 'Ahad Rauf <ahadrauf@berkeley.edu>' to fix it.")
+      message(FATAL_ERROR "Project 'planning' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/cc/ee106a/fa18/class/ee106a-aby/ros_workspaces/TheCreator/src/planning/${idir}'.  Ask the maintainer 'Ahad Rauf <ahadrauf@berkeley.edu>' to fix it.")
     endif()
     _list_append_unique(planning_INCLUDE_DIRS ${include})
   endforeach()
@@ -122,7 +122,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/devel/lib;/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/TheCreator/devel/lib;/home/cc/ee106a/fa18/class/ee106a-aab/ros_workspaces/lab4/devel/lib;/scratch/shared/baxter_ws/devel/lib;/opt/ros/indigo/lib)
+    foreach(path /home/cc/ee106a/fa18/class/ee106a-aby/ros_workspaces/TheCreator/devel/lib;/home/cc/ee106a/fa18/class/ee106a-aby/ros_workspaces/lab7/devel/lib;/home/cc/ee106a/fa18/class/ee106a-aby/ros_workspaces/lab3/devel/lib;/scratch/shared/baxter_ws/devel/lib;/opt/ros/indigo/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

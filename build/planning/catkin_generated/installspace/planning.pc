@@ -1,0 +1,8 @@
+prefix=/home/cc/ee106a/fa18/class/ee106a-aby/ros_workspaces/TheCreator/install
+
+Name: planning
+Description: Description of planning
+Version: 0.0.0
+Cflags: -I/home/cc/ee106a/fa18/class/ee106a-aby/ros_workspaces/TheCreator/install/include
+Libs: -L/home/cc/ee106a/fa18/class/ee106a-aby/ros_workspaces/TheCreator/install/lib 
+Requires: message_runtime

@@ -64,7 +64,6 @@ add_service_files(
   FILES
   BuildStructure.srv
   ModelGenerator.srv
-  SwitchMaster.srv
 )
 
 ## Generate actions in the 'action' folder

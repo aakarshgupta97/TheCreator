@@ -14,13 +14,13 @@ ser = serial.Serial(PORT, BAUD_RATE)
 
 def inflate():
 	print('Inflating')
-	for _ in range(3):	
+	for _ in range(3):
 		ser.write(b'1')
 		time.sleep(0.33)
 
 def deflate():
 	print('Deflating')
-	for _ in range(3):	
+	for _ in range(3):
 		ser.write(b'0')
 		time.sleep(0.33)
 

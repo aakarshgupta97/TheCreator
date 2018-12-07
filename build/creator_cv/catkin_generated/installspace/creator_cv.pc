@@ -1,0 +1,8 @@
+prefix=/home/cc/ee106a/fa18/class/ee106a-aby/ros_workspaces/TheCreator/install
+
+Name: creator_cv
+Description: Description of creator_cv
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/cc/ee106a/fa18/class/ee106a-aby/ros_workspaces/TheCreator/install/lib 
+Requires: 

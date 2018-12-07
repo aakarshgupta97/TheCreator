@@ -16,34 +16,83 @@ srvPath = os.path.join(planningPath, 'srv')
 sys.path.append(srvPath)
 from planning.srv import ModelGenerator, ModelGeneratorResponse
 
-def generate_model(depth_map):
-    height = np.amax(depth_map)
-    layer_blocks = []
-    for i in range(1, height + 1):
-        layer = np.zeros_like(depth_map)
-        layer[depth_map >= i] = 1
-        layer_blocks.append(get_block_structure(layer))
+import numpy as np
+import matplotlib.pyplot as plt
 
 
-def get_block_structure(layer):
-    blocks = []
-    col = 2
-    for i in range(len(layer)):
-        for j in range(len(layer[0])):
-            if layer[i, j] == 1:
-                blocks.append((i, j))
-                layer[i, j] = col
-                layer[i + 1, j] = col
-                layer[i, j + 1] = col
-                layer[i + 1, j + 1] = col
-                col += 1
-    plt.imshow(layer)
-    plt.show()
-    return blocks
+class Block():
+    def __init__(self, coords, layer_num):
+        self.coords = coords
+        self.layer_num = layer_num
 
-def modelGeneratorMain(inputs):
+    def get_constraints(layer):
+        u, v = self.coords
+        left = layer[u - 1, v]
+
+
+class Layer():
+    def __init__(self, layer, layer_num):
+        self.arr = layer
+        self.layer_num = layer_num
+        self.blocks = []
+        self.get_block_structure()
+
+    def get_block_structure(self):
+        layer_copy = np.zeros_like(self.arr)
+        layer_copy[:, :] = self.arr[:, :]
+        for i in range(len(layer_copy)):
+            for j in range(len(layer_copy[0])):
+                if layer_copy[i, j] == 1:
+                    self.blocks.append(Block((i, j), self.layer_num))
+                    layer_copy[i, j] = 0
+                    layer_copy[i + 1, j] = 0
+                    layer_copy[i, j + 1] = 0
+                    layer_copy[i + 1, j + 1] = 0
+
+
+class Creation():
+    def __init__(self, depth_map):
+        self.layers = self.generate_layers(depth_map)
+        self.num_layers = len(self.layers)
+
+    def generate_layers(self, depth_map):
+        height = np.amax(depth_map)
+        layers = []
+        for i in range(1, height + 1):
+            layer = np.zeros_like(depth_map)
+            layer[depth_map >= i] = 1
+            layers.append((Layer(layer, i)))
+        return layers
+
+class Strategy():
+    def __init__(self, creation):
+        self.creation = creation
+        self.strategy = []
+        self.constraints = {}
+        get_strat_by_layer()
+
+    def get_constraints(self, block):
+        block_layer = self.creation.layers[block.layer_num - 1].arr
+        u, v = block.coords
+        cons = ""
+        neigh = [[(u, v - 1) , (u + 1, v - 1)], [(u - 1, v), (u - 1, v + 1)], [(u, v + 2)]]
+        is_valid = lambda i, j: (i in range(10)) and (j in range(12))
+   
+        for side, coords in zip('lur', neigh):
+            for c in coords:
+                i, j = c
+                if is_valid(i, j) and block_layer[i, j] == 1:
+                    cons += side  
+        self.constraints[(u, v)] = cons
+
+    def get_strat_by_layer(self, layer):
+        for block in layer.blocks:
+            self.get_constraints(block)
+
+
+def modelGeneratorMain(input):
 	"""
-	Inputs should be empty
+	Input should be empty
 	"""
 	test = np.zeros((10, 12)).astype(np.int32)
 	test[3][6] = 1
@@ -63,19 +112,27 @@ def modelGeneratorMain(inputs):
 	test[8][4] = 1
 	test[8][5] = 1
 
-	errorCode = 0
-	blocks = generate_model(test)
-	blocks = [(1, 1), (1, 0), (2, 2)]
-	blocks = list(np.ndarray.flatten(np.array(blocks)))
-	width = 3
-	height = 2
+	# model = Creation(test, (0, 0, 0))
+	model = Creation(test)
+	blocks = model.layers
 
 	print(blocks)
-	print(len(blocks))
-	print(type(blocks[0]))
+	# blocks = [layer.blocks() for layer in blocks]
 
-	sys.stdout.flush()
-	return ModelGeneratorResponse(errorCode, blocks, width, height)
+	width = len(test)
+	height = len(test[0])
+	num_layers = np.amax(depth_map)
+	layers = []
+    for i in range(1, num_layers + 1):
+        layer = np.zeros_like(depth_map)
+        layer[depth_map >= i] = 1
+
+
+    np.save()
+
+	blocks = list(np.ndarray.flatten(np.array(blocks)))
+	return ModelGeneratorResponse(blocks, num_layers, width, height)
+    
    
 def initialize_service():
 	rospy.init_node('model_generator_node')
