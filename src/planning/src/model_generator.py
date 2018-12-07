@@ -41,28 +41,41 @@ def get_block_structure(layer):
     plt.show()
     return blocks
 
-def modelGeneratorMain():
-   test = np.zeros((10, 12)).astype(np.int32)
-   test[3][6] = 1
-   test[3][7] = 1
-   test[4][4] = 1
-   test[4][5] = 1
-   test[4][6] = 1
-   test[4][7] = 1
-   test[5][4] = 1
-   test[5][5] = 1
-   test[5][6] = 1
-   test[5][7] = 1
-   test[6][6] = 1
-   test[6][7] = 1
-   test[7][4] = 1
-   test[7][5] = 1
-   test[8][4] = 1
-   test[8][5] = 1
+def modelGeneratorMain(inputs):
+	"""
+	Inputs should be empty
+	"""
+	test = np.zeros((10, 12)).astype(np.int32)
+	test[3][6] = 1
+	test[3][7] = 1
+	test[4][4] = 1
+	test[4][5] = 1
+	test[4][6] = 1
+	test[4][7] = 1
+	test[5][4] = 1
+	test[5][5] = 1
+	test[5][6] = 1
+	test[5][7] = 1
+	test[6][6] = 1
+	test[6][7] = 1
+	test[7][4] = 1
+	test[7][5] = 1
+	test[8][4] = 1
+	test[8][5] = 1
 
-   errorCode = 0
-   blocks = generate_model(test)
-   return ModelGeneratorResponse(errorCode, blocks, 10, 12)
+	errorCode = 0
+	blocks = generate_model(test)
+	blocks = [(1, 1), (1, 0), (2, 2)]
+	blocks = list(np.ndarray.flatten(np.array(blocks)))
+	width = 3
+	height = 2
+
+	print(blocks)
+	print(len(blocks))
+	print(type(blocks[0]))
+
+	sys.stdout.flush()
+	return ModelGeneratorResponse(errorCode, blocks, width, height)
    
 def initialize_service():
 	rospy.init_node('model_generator_node')

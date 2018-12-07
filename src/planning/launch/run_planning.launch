@@ -17,5 +17,6 @@
   <!-- Uncomment below to run the camera service and image processing -->
   <node name="model_generator" pkg="planning" type="model_generator.py"  respawn="false" output="screen" />
   <node name="build_structure" pkg="planning" type="build_structure.py"  respawn="false" output="screen" />
+  <node name="switch_master" pkg="planning" type="switch_master.py"  respawn="false" output="screen" /> 
 
 </launch>
