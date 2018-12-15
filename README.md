@@ -28,12 +28,12 @@ To run the kinematics test code (lab7_planning is currently a test package that 
 ```bash
 source devel/setup.bash
 catkin_make
-./baxter.sh <robot_name>.local  % we used ada for our Sawyer robot, but on a generic Sawyer this should be the handle name for the robot) 
-python src/lab7_planning/src/run_camera.py  % you need to be in <robot_name> to do this (do this in the same terminal as the previous step
-roslaunch ar_track_alvar sawyer_ar.launch (you'll need to open a new tab and repeat the above three commands for this step and every one after this)
+./baxter.sh <robot_name>.local  # we used ada for our Sawyer robot, but on a generic Sawyer this should be the handle name for the robot) 
+python src/lab7_planning/src/run_camera.py  # you need to be in <robot_name> to do this (do this in the same terminal as the previous step
+roslaunch ar_track_alvar sawyer_ar.launch # you'll need to open a new tab and repeat the above three commands for this step and every one after this
 rosrun intera_interface enable_robot.py -e
 rosrun intera_interface joint_trajectory_action_server.py
 roslaunch sawyer_moveit_config sawyer_moveit.launch electric_gripper:=false
-python src/lab7_planning/src/path_test.py %this should run the main body of the code
+python src/lab7_planning/src/path_test.py # this should run the main body of the code
 ```
 
