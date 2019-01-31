@@ -24,7 +24,7 @@ catkin_make
 source devel/setup.bash
 ```
 
-To run the kinematics test code (lab7_planning is currently a test package that allows the CV code and kinematics code to be run separately, while planning is the main integrated package that merges both the CV and kinematics):
+To run the kinematics test code (lab7_planning is currently a test package that allows the CV code and kinematics code to be run separately, while planning is the main integrated package that merges both the CV and kinematics): 
 ```bash
 source devel/setup.bash
 catkin_make
